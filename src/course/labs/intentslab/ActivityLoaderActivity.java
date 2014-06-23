@@ -91,7 +91,7 @@ public class ActivityLoaderActivity extends Activity {
 		// createChooser())
 		
 		Intent chooserIntent = null;
-		chooserIntent = Intent.createChooser(urlInt, "Choose A Browser");
+		chooserIntent = Intent.createChooser(urlInt, CHOOSER_TEXT);
 		
 		Log.i(TAG,"Chooser Intent Action:" + chooserIntent.getAction());
 		// TODO - Start the chooser Activity, using the chooser intent
@@ -107,7 +107,7 @@ public class ActivityLoaderActivity extends Activity {
 		// TODO - Process the result only if this method received both a
 		// RESULT_OK result code and a recognized request code
 		// If so, update the Textview showing the user-entered text.
-		if (requestCode == 1) {
+		if (requestCode == GET_TEXT_REQUEST_CODE) {
 			if (resultCode == RESULT_OK) {
 				mUserTextView.setText(data.getStringExtra("result"));
 				
